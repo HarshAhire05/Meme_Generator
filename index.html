@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator Fact</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('smile-background.png') repeat; /* Local image */
+            color: #333; /* Darker text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            animation: float 3s ease-in-out infinite; /* Faster floating animation */
+        }
+
+        @keyframes float {
+            0% { background-position: 0px; }
+            50% { background-position: 10px; }
+            100% { background-position: 0px; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Slightly more opaque background for better contrast */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4081;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e91e63;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meme Generator Fact</h1>
+        <p id="fact"></p>
+        <button onclick="showRandomFact()">Show Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "A meme generator is an online tool that allows users to create memes by combining images with text captions, often leveraging humor or cultural references.",
+            "Most meme generators feature a simple drag-and-drop interface, making it easy for users to select images and add text without any graphic design skills.",
+            "Many meme generators come with a library of popular meme templates, allowing users to choose from well-known formats like 'Distracted Boyfriend' or 'Drake Hotline Bling.'",
+            "Some advanced meme generators use algorithms to suggest humorous text based on the selected image, helping users create more engaging content.",
+            "Users can often share their created memes directly on social media platforms like Facebook, Twitter, and Instagram, enhancing their reach and engagement.",
+            "Meme generators typically offer customization features, allowing users to change fonts, colors, and layouts to match their personal style or the tone of the meme.",
+            "Many meme generators are available as mobile apps, enabling users to create and share memes on-the-go.",
+            "Memes have become a significant part of internet culture, often used to comment on social issues, trends, and events in a humorous way.",
+            "Some educators use meme generators as a tool for teaching, encouraging students to express their understanding of concepts through humor and creativity.",
+            "Businesses utilize meme generators for marketing purposes, creating relatable content that resonates with their audience and promotes brand engagement."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Show a random fact on initial load
+        showRandomFact();
+    </script>
+</body>
+</html>
